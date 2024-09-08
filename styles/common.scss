@@ -1,0 +1,129 @@
+@import "mixins";
+@import "variables";
+
+.container {
+  max-width: 1175px;
+}
+
+.header {
+  background-color: $bg-color-green;
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    .header-content__nav,
+    .header-content__icon {
+      flex-grow: 1;
+    }
+    nav {
+      max-width: 400px;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li {
+          line-height: 25px;
+          font-weight: 400;
+          font-family: $font-work-sans;
+          font-optical-sizing: auto;
+          font-style: normal;
+          a {
+            color: $text-color-white;
+            text-decoration: none;
+            transition: all 0.4s;
+          }
+
+          a:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.button-black {
+  @include button;
+}
+
+@media (max-width: 768px) {
+  .header .header-content nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .nav-links {
+    z-index: 999;
+    background-color: $bg-color-green;
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    transition: 0.3s ease;
+  }
+  .nav-links.active {
+    right: 0;
+  }
+
+  .burger {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+  }
+
+  .burger div {
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+  }
+
+  .burger div:nth-child(1) {
+    top: 25%;
+  }
+
+  .burger div:nth-child(3) {
+    top: 75%;
+  }
+
+  .burger.active div {
+    background-color: white;
+  }
+
+  .burger.active div:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .burger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active div:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

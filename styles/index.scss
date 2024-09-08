@@ -1,0 +1,303 @@
+@import "mixins";
+@import "variables";
+
+.content {
+  font-family: $font-work-sans;
+
+  .black-button {
+    @include button($black, $white);
+  }
+
+  .white-button {
+    @include button;
+  }
+
+  .title {
+    font-family: $font-crimson;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .welcome {
+    padding-top: 15px;
+    padding-bottom: 80px;
+    background-color: $bg-color-green;
+
+    .welcome-content {
+      display: flex;
+      justify-content: space-between;
+      color: $text-color-white;
+
+      .welcome-content__description-block {
+        width: 400px;
+
+        .welcome-content__block-title {
+          font-size: 16px;
+          padding-top: 40px;
+          font-weight: bold;
+        }
+
+        .welcome-content__title {
+          padding-top: 15px;
+        }
+
+        .welcome-content__description {
+          padding-top: 15px;
+          padding-bottom: 25px;
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .partners {
+    .partners-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .partners-content__block-title {
+        color: $text-color-green;
+        font-size: 16px;
+        padding-top: 60px;
+        font-weight: bold;
+      }
+
+      .partners-content__description-block {
+        max-width: 411px;
+        width: 100%;
+        text-align: center;
+        .partners-content__title {
+          padding-top: 16px;
+        }
+        .partners-content__description {
+          padding-top: 16px;
+          font-size: 20px;
+        }
+      }
+
+      .partners-content__companies-block {
+        padding-top: 55px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 55px;
+      }
+    }
+  }
+
+  .lorem-ipsum-1,
+  .lorem-ipsum-2 {
+    padding-top: 73px;
+
+    .lorem-ipsum-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .lorem-ipsum-content__description-block {
+        width: 470px;
+
+        .lorem-ipsum-content__description {
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.5);
+          padding-top: 16px;
+          padding-bottom: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+  .team {
+    .team-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .team-content__block-title {
+        color: $text-color-green;
+        font-size: 16px;
+        padding-top: 60px;
+        font-weight: bold;
+      }
+      .team-content__description-block {
+        max-width: 411px;
+        width: 100%;
+        text-align: center;
+        .team-content__title {
+          padding-top: 16px;
+        }
+        .team-content__description {
+          padding-top: 16px;
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+      .team-content__talents-block {
+        padding-top: 55px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 55px;
+        .team-content__talents-block-item {
+          padding: 20px;
+          width: 252px;
+          height: 299px;
+          text-align: center;
+          box-sizing: border-box;
+          box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+          .team-content__talents-block-item-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 19px;
+          }
+          .team-content__talents-block-item-role {
+            font-size: 15px;
+            margin-top: 17px;
+          }
+        }
+      }
+    }
+  }
+  .accordion {
+    .container {
+      .accordion-button {
+        margin-bottom: 10px;
+        background-color: #74c69d;
+        color: #ffffff;
+        font-family: $font-work-sans;
+        font-size: 20px;
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: #74c69d;
+        color: #ffffff;
+      }
+      .accordion-button:focus {
+        box-shadow: 0 0 0 0.25rem rgba(153, 230, 153, 0.5);
+      }
+      .accordion-body {
+        background-color: #f0fff0;
+        color: #003300;
+        font-size: 15px;
+        font-family: $font-work-sans;
+      }
+      .form-label {
+        color: #004d00;
+      }
+      .form-control {
+        background-color: #e6ffe6;
+        border-color: #99e699;
+      }
+      .form-control:focus {
+        border-color: #66cc66;
+        box-shadow: 0 0 0 0.25rem rgba(102, 204, 102, 0.25);
+      }
+      .btn-primary {
+        background-color: #99e699;
+        border-color: #66cc66;
+      }
+      .btn-primary:hover {
+        background-color: #66cc66;
+        border-color: #4d994d;
+      }
+    }
+  }
+}
+.footer {
+  width: 100%;
+  height: 125px;
+  background-color: $bg-color-green;
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+
+    .footer-content__block-icons {
+      display: flex;
+      gap: 20px;
+      height: 18px;
+    }
+    .footer-content__block-description {
+      font-family: $font-work-sans;
+      font-size: 20px;
+      color: $text-color-white;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .partners-content__companies-block,
+  .team-content__talents-block,
+  .footer-content {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .welcome-content,
+  .lorem-ipsum-2 .lorem-ipsum-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .lorem-ipsum-1 .lorem-ipsum-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .welcome-content__image,
+  .lorem-ipsum-content__image {
+    margin-bottom: 40px;
+  }
+
+  .welcome-content__image img,
+  .lorem-ipsum-content__image img {
+    max-width: 500px;
+    height: auto;
+  }
+
+  .content .welcome .welcome-content .welcome-content__description-block,
+  .content
+    .lorem-ipsum-1
+    .lorem-ipsum-content
+    .lorem-ipsum-content__description-block,
+  .content
+    .lorem-ipsum-2
+    .lorem-ipsum-content
+    .lorem-ipsum-content__description-block {
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .header-content__nav ul {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .footer-content {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .welcome-content__image img,
+  .lorem-ipsum-content__image img {
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .partners-content__companies-block {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .partners-content__companies-block img {
+    max-width: 200px;
+    height: auto;
+  }
+}
